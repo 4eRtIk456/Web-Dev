@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images</title>
+</head>
+<body>
+    <style>
+    body {
+        background-image: url("./images/avatar.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
+    p {
+        background-image: url("./images/Maomao.jpg");
+    }
+    </style>
+    <img src="D:\KBTU\Web-Dev\Lab 1\w3schools\images\Без названия.gif" alt="money" style="width:400px">
+    <h3>Image as a Link</h3>
+    <a href="https://kusuriya.fandom.com/wiki/Maomao">
+        <img src="D:\KBTU\Web-Dev\Lab 1\w3schools\images\Без названия (1).gif" alt="MaoMao" style="width:400px">
+    </a>
+
+
+    <p><img src="D:\KBTU\Web-Dev\Lab 1\w3schools\images\Anime Spell GIF - Anime Spell Magic - Descobrir e Compartilhar GIFs.gif" 
+        alt="Friren" style="float:right;width: 400px;">
+        The image will float to the right of the text.
+    </p>
+
+
+    <img src="D:\KBTU\Web-Dev\Lab 1\w3schools\images\avatar2.jpg" alt="Workplace" usemap="#workmap">
+
+    <map name="workmap">
+    <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm" onclick="myFunction()">
+    <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm" onclick="myFunction()">
+    <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm" onclick="myFunction()">
+    </map>
+    <script>
+    function myFunction() {
+    alert("You clicked the Friren!");
+    }
+    </script>
+
+    <p>Hellooooooooooooooooooooooooo</p>
+
+
+    <picture>
+    <source media="(min-width: 650px)" srcset="D:\KBTU\Web-Dev\Lab 1\w3schools\images\Без названия (13).jpg">
+    <source media="(min-width: 465px)" srcset="D:\KBTU\Web-Dev\Lab 1\w3schools\images\Без названия (12).jpg">
+    <img src="D:\KBTU\Web-Dev\Lab 1\w3schools\images\Без названия (11).jpg">
+    </picture>
+
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+body {
+  background-color: powderblue;
+}
+h1 {
+  color: blue;
+}
+p {
+  color: red;
+}
+p {
+  border: 2px solid rgb(0, 159, 180);
+  padding: 30px;
+}
+h2 {
+  border: 2px solid rgb(250, 0, 187);
+  margin: 50px;
+}
