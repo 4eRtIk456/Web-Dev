@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.gradient-text {
+  font-weight: bold;
+  /* 1. Задаем градиент */
+  background-image: linear-gradient(90deg, #ff5e1e, #f10266, rgb(207, 0, 207));
+  /* 2. Обрезаем фон по контуру текста */
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* 3. Делаем текст прозрачным, чтобы был виден фон */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Для поддержки стандарта */
+}
+
+
+.lang {
+    border: none;
+    outline: none;
+}
