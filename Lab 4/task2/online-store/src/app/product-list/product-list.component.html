@@ -1,0 +1,58 @@
+<div class="page">
+  <h1 class="title">Cat Store</h1>
+
+  <div class="grid">
+    @for (p of products; track p.id) {
+      <article class="card">
+        <a class="product-link" [href]="p.link" target="_blank" rel="noopener noreferrer">
+          <img class="main-image" [src]="activeImage[p.id]" [alt]="p.name" />
+        </a>
+
+        <!-- Optional gallery -->
+        <div class="thumbs">
+          @for (img of p.images; track img) {
+            <button
+              type="button"
+              class="thumb"
+              [class.active]="activeImage[p.id] === img"
+              (click)="setActiveImage(p.id, img)"
+              aria-label="Select image"
+            >
+              <img [src]="img" [alt]="p.name" />
+            </button>
+          }
+        </div>
+
+        <div class="content">
+          <a class="name" [href]="p.link" target="_blank" rel="noopener noreferrer">
+            {{ p.name }}
+          </a>
+
+          <p class="desc">{{ p.description }}</p>
+
+          <div class="meta">
+            <div class="price">{{ formatPrice(p.price) }}</div>
+
+            <div class="rating" aria-label="rating">
+              <span class="stars">
+                @for (filled of starsArray(p.rating); track $index) {
+                  <span class="star" [class.filled]="filled">★</span>
+                }
+              </span>
+              <span class="rating-num">{{ p.rating }}</span>
+            </div>
+          </div>
+
+          <div class="actions">
+            <a class="btn" [href]="whatsappShareUrl(p)" target="_blank" rel="noopener noreferrer">
+              Share WhatsApp
+            </a>
+            <a class="btn" [href]="telegramShareUrl(p)" target="_blank" rel="noopener noreferrer">
+              Share Telegram
+            </a>
+          </div>
+        </div>
+      </article>
+    }
+  </div>
+</div>
