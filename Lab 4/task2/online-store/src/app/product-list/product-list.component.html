@@ -1,14 +1,36 @@
 <div class="page">
   <h1 class="title">Cat Store</h1>
 
+  <div class="search-row">
+    <label class="search-label" for="search">Search products</label>
+
+    <input
+      id="search"
+      class="search-input"
+      type="text"
+      placeholder="Search by product name..."
+      [(ngModel)]="searchQuery"
+      (input)="filterProducts()"
+    />
+  </div>
+
+  <div class="showing">
+    Showing: <b>{{ shownCount }}</b> / <b>{{ totalCount }}</b> products
+  </div>
+
+  <p class="empty" *ngIf="filteredProducts.length === 0">
+    No products found
+  </p>
+
   <div class="grid">
-    @for (p of products; track p.id) {
+    @for (p of filteredProducts; track p.id) {
       <article class="card">
         <a class="product-link" [href]="p.link" target="_blank" rel="noopener noreferrer">
-          <img class="main-image" [src]="activeImage[p.id]" [alt]="p.name" />
+          <div class="image-wrap">
+            <img class="main-image" [src]="activeImage[p.id]" [alt]="p.name" />
+          </div>
         </a>
 
-        <!-- Optional gallery -->
         <div class="thumbs">
           @for (img of p.images; track img) {
             <button

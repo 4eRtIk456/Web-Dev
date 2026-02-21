@@ -1,25 +1,54 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PRODUCTS } from '../data/products';
+import { FormsModule } from '@angular/forms';
 import { Product } from '../models/product.model';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
 })
 export class ProductListComponent {
   products: Product[] = PRODUCTS;
 
-  // gallery state: chosen main image per product id
+  searchQuery: string = '';
+  filteredProducts: Product[] = [];
+
+  // gallery state (если у тебя есть)
   activeImage: Record<number, string> = {};
 
   ngOnInit() {
+    // init gallery (если нужно)
     for (const p of this.products) {
       this.activeImage[p.id] = p.image;
     }
+
+    // init filtered list
+    this.filteredProducts = this.products;
+  }
+
+  filterProducts(): void {
+    const query = this.searchQuery.trim().toLowerCase();
+
+    if (!query) {
+      this.filteredProducts = this.products;
+      return;
+    }
+
+    this.filteredProducts = this.products.filter((product) =>
+      product.name.toLowerCase().includes(query)
+    );
+  }
+
+  get totalCount(): number {
+  return this.products.length;
+}
+
+  get shownCount(): number {
+    return this.filteredProducts.length;
   }
 
   setActiveImage(productId: number, img: string) {
