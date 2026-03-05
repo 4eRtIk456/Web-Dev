@@ -1,0 +1,24 @@
+:root {
+  --pink: #ff5cc8;
+  --purple: #8a4fff;
+  --light-purple: #f4e9ff;
+  --soft-pink: #ffe6f7;
+  --dark-purple: #4b1f75;
+}
+body {
+  margin: 10px;
+  background: linear-gradient(135deg, #ffb6f9, #c5a3ff);
+}
+
+* {
+  font-family: "Popins", sans-serif;
+}
+
+button, .btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover, .btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(138, 79, 255, 0.4);
+}

@@ -1,0 +1,77 @@
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 6px 20px rgba(138, 79, 255, 0.2);
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.info {
+  padding: 14px;
+  border-radius: 10px;
+  background: #eff6ff;
+  color: #ff00dd;
+}
+
+.error {
+  padding: 14px;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #dc2626;
+  margin-bottom: 16px;
+}
+
+.album-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.album-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  padding: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  flex-wrap: wrap;
+}
+
+.album-link {
+  flex: 1;
+  min-width: 220px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.album-link:hover .album-title {
+  color: purple;
+}
+
+.album-id {
+  font-weight: bold;
+  margin-right: 12px;
+  color: #6b7280;
+}
+
+.album-title {
+  word-break: break-word;
+}
+
+.delete-btn {
+  border: none;
+  background: #ff5cc8;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #8a4fff;
+}

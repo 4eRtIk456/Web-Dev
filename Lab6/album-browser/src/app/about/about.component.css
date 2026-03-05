@@ -1,0 +1,16 @@
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 6px 20px rgba(138, 79, 255, 0.2);
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 12px;
+}

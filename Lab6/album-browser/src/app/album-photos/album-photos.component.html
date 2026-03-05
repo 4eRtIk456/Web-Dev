@@ -1,0 +1,21 @@
+<section class="card">
+  <h1>Album {{ albumId }} Photos</h1>
+
+  <div *ngIf="loading" class="info">Loading photos...</div>
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+  <div *ngIf="!loading && photos.length === 0" class="info">
+    No photos found for this album.
+  </div>
+
+  <div *ngIf="!loading && photos.length > 0" class="photo-grid">
+    <div class="photo-card" *ngFor="let photo of photos" [title]="photo.title">
+      <img [src]="photo.thumbnailUrl" [alt]="photo.title" />
+      <p>{{ photo.title }}</p>
+    </div>
+  </div>
+
+  <div class="actions">
+    <a class="btn" [routerLink]="['/albums', albumId]">Back</a>
+  </div>
+</section>
