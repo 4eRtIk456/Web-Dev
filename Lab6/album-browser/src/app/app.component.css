@@ -67,3 +67,7 @@
 .btn:hover {
   transform: scale(1.05);
 }
+
+.newAlbum {
+  background-color: rgba(255, 187, 230, 0.658);
+}

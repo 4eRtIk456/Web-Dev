@@ -1,0 +1,60 @@
+<div class="create-page">
+
+  <div class="card">
+
+    <h2>Create New Album</h2>
+
+    <p class="subtitle">
+      Sends POST /albums (JSONPlaceholder simulates creation).
+    </p>
+
+    <form (ngSubmit)="createAlbum()">
+
+      <label>User ID (1–10)</label>
+      <input
+        type="number"
+        [(ngModel)]="userId"
+        name="userId"
+        min="1"
+        max="10"
+        required
+      >
+
+      <label>Title</label>
+      <input
+        type="text"
+        [(ngModel)]="title"
+        name="title"
+        placeholder="e.g., My new album"
+        required
+      >
+
+      <div class="buttons">
+
+        <button
+          type="button"
+          class="cancel"
+          routerLink="/albums"
+        >
+          Cancel
+        </button>
+
+        <button
+          type="submit"
+          class="create"
+          [disabled]="loading"
+        >
+          {{ loading ? 'Creating...' : 'Create' }}
+        </button>
+
+      </div>
+
+    </form>
+
+    <p *ngIf="error" class="error">
+      {{ error }}
+    </p>
+
+  </div>
+
+</div>

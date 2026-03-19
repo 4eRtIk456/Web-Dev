@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { Photo } from '../models/photo';
-import { AlbumService } from '../services/album.service';
+import { Photo } from '../../models/photo';
+import { AlbumService } from '../../services/album.service';
 
 @Component({
   selector: 'app-album-photos',
